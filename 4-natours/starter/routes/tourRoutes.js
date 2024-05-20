@@ -3,7 +3,7 @@ const tourController = require('../controllers/tourController');
 
 const router = express.Router();
 
-router.param('id', tourController.checkInvalidId);
+// router.param('id', tourController.checkInvalidId);
 
 // create a check body middleware
 // check if body contains the name and price property
@@ -13,7 +13,7 @@ router.param('id', tourController.checkInvalidId);
 router
   .route('/')
   .get(tourController.getAllTours)
-  .post(tourController.checkValidBody, tourController.createTour);
+  .post(tourController.createTour);
 
 router
   .route('/:id')

@@ -14,9 +14,10 @@ mongoose
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
+    useUnifiedTopology: true,
   })
-  .then((con) => {
-    console.log(con.connections);
+  .then(() => {
+    // eslint-disable-next-line no-console
     console.log('DB connect successfully!');
   });
 
@@ -25,5 +26,6 @@ const app = require('./app');
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`App running on port ${port}...`);
 });
