@@ -40,6 +40,7 @@ const sendErrorProd = (err, res) => {
     // programming or other unknown error: don't leak error details
   } else {
     // 1) Log error
+    // eslint-disable-next-line no-console
     console.error('ERROR ', err);
 
     // 2) Send  generic message
